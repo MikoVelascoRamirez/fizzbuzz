@@ -22,8 +22,14 @@ describe("Tests's suite for ExplorerService class", () => {
         }
     });
 
-    test("2) Checking if the amount of Node's explorers's list is 10", () => {
+    test("3) Checking if the amount of Node's explorers's list is 10", () => {
         const explorersInNodeLength = ExplorerService.amountOfExplorers(Explorers, "node"); 
         expect(explorersInNodeLength).toEqual(10);
+    });
+
+    test("4) Get github's usernames of explorers in node", () => {
+        const githubUsernamesOfNodeExplorers = ["ajolonauta1", "ajolonauta2", "ajolonauta3", "ajolonauta4", "ajolonauta5", "ajolonauta11", "ajolonauta12", "ajolonauta13", "ajolonauta14", "ajolonauta15"];
+
+        expect(ExplorerService.getExplorersUsernamesByMission(Explorers, "node")).toEqual(expect.arrayContaining(githubUsernamesOfNodeExplorers))
     });
 });
