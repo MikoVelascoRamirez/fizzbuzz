@@ -11,6 +11,11 @@ describe("Suite's tests for Reader class", () => {
         const fileContent = Reader.readJsonfile(nameFile);
         expect(fileContent).not.toBeUndefined();
     });
-    /*test();
-    test();*/
+
+    test("3) Checking if the JSON file has 15 explorers", () => {
+        const nameFile = "explorers.json";
+        const jsonLength = Reader.readJsonfile(nameFile)
+        expect(jsonLength.length).toBe(15)
+    });
+    /*test();*/
 });
