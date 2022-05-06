@@ -17,5 +17,4 @@ describe("Suite's tests for Reader class", () => {
         const jsonLength = Reader.readJsonfile(nameFile)
         expect(jsonLength.length).toBe(15)
     });
-    /*test();*/
 });
