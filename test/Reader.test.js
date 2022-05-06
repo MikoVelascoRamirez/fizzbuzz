@@ -5,6 +5,12 @@ describe("Suite's tests for Reader class", () => {
     test("1) Checking if the file exists", () => {
         expect(()=> Reader.readJsonfile(nameFile)).toThrowError('ENOENT');
     });
+
+    test("2) The file is empty?", () => {
+        const nameFile = "explorers.json";
+        const fileContent = Reader.readJsonfile(nameFile);
+        expect(fileContent).not.toBeUndefined();
+    });
     /*test();
     test();*/
 });
