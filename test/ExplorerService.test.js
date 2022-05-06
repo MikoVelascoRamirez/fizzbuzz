@@ -21,4 +21,9 @@ describe("Tests's suite for ExplorerService class", () => {
             expect(explorersInNode[indexExplorer].mission).toBe("node");
         }
     });
+
+    test("2) Checking if the amount of Node's explorers's list is 10", () => {
+        const explorersInNodeLength = ExplorerService.amountOfExplorers(Explorers, "node"); 
+        expect(explorersInNodeLength).toEqual(10);
+    });
 });
