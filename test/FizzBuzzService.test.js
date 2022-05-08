@@ -6,4 +6,10 @@ describe("Tests's suite fot FizzBuzz Service", () => {
         const paramIsAnObject = FizzBuzz.applyValidationInExplorer([]);
         expect(paramIsAnObject).toMatch(/El explorer debe ser un objeto/)
     });
+
+    test("2) Verify if the object contains the attribute 'score'", () => {
+        const explorerExpected = {name: "explorer1", score: 1};
+        const paramIsAnObject = FizzBuzz.applyValidationInExplorer({name: "explorer1", score: 1});
+        expect(paramIsAnObject).toEqual(expect.objectContaining(explorerExpected))
+    });
 });
