@@ -17,4 +17,10 @@ describe("Tests's suite fot FizzBuzz Service", () => {
         const paramIsAnObject = FizzBuzz.applyValidationInExplorer({name: "explorer4", score: "asdsa"});
         expect(paramIsAnObject).toMatch(/El puntaje debe ser de tipo entero/)
     });
+
+    test("4) Verifying if the score is divisible by 3", () => {
+        const explorer = {name: "explorer3", score: 6};
+        const objectWIthFizzTrickAttribute = FizzBuzz.applyValidationInExplorer(explorer);
+        expect(objectWIthFizzTrickAttribute.trick).toBe("FIZZ");
+    });
 });
