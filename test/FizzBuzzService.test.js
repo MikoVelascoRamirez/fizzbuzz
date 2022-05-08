@@ -31,8 +31,14 @@ describe("Tests's suite fot FizzBuzz Service", () => {
     });
 
     test("6) Verifying if the score is divisible by 3 and by 5", () => {
-        const explorer = {name: "explorer15", score: 7};
+        const explorer = {name: "explorer15", score: 15};
         const objectWIthFizzTrickAttribute = FizzBuzz.applyValidationInExplorer(explorer);
         expect(objectWIthFizzTrickAttribute.trick).toBe("FIZZBUZZ");
+    });
+
+    test("7) Verifying if the score is not divisible by 3 and by 5", () => {
+        const explorer = {name: "explorer7", score: 7};
+        const objectWIthFizzTrickAttribute = FizzBuzz.applyValidationInExplorer(explorer);
+        expect(objectWIthFizzTrickAttribute.trick).toBe(explorer.score);
     });
 });
