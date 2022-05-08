@@ -12,4 +12,9 @@ describe("Tests's suite fot FizzBuzz Service", () => {
         const paramIsAnObject = FizzBuzz.applyValidationInExplorer({name: "explorer1", score: 1});
         expect(paramIsAnObject).toEqual(expect.objectContaining(explorerExpected))
     });
+
+    test("3) Verify if score's value it's not a number", () => {
+        const paramIsAnObject = FizzBuzz.applyValidationInExplorer({name: "explorer4", score: "asdsa"});
+        expect(paramIsAnObject).toMatch(/El puntaje debe ser de tipo entero/)
+    });
 });
