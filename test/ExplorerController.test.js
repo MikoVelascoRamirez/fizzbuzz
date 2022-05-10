@@ -12,4 +12,10 @@ describe("Tests's suite of ExplorerController", () => {
         const amountExplorersInNode = ExplorerController.getExplorersAmonutByMission("node");
         expect(amountExplorersInNode).toEqual(10);
     });
+
+    test("(3) Getting Github's usernames of explorers in Node", () => {
+        const githubUsernamesOfNodeExplorers = ["ajolonauta1", "ajolonauta2", "ajolonauta3", "ajolonauta4", "ajolonauta5", "ajolonauta11", "ajolonauta12", "ajolonauta13", "ajolonauta14", "ajolonauta15"];
+        const nodeExplorersUsernames = ExplorerController.getExplorersUsernamesByMission("node");
+        expect(nodeExplorersUsernames).toEqual(expect.arrayContaining(githubUsernamesOfNodeExplorers));
+    });
 });
