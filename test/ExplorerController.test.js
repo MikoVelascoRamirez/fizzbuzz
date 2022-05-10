@@ -7,4 +7,9 @@ describe("Tests's suite of ExplorerController", () => {
             expect(nodeExplorersList[indexExplorer].mission).toBe("node");
         }
     });
+
+    test("2) Getting number of explorers in Node", () => {
+        const amountExplorersInNode = ExplorerController.getExplorersAmonutByMission("node");
+        expect(amountExplorersInNode).toEqual(10);
+    });
 });
