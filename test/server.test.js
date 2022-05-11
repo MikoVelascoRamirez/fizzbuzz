@@ -23,6 +23,16 @@ describe("Tests's suite of API Server", () => {
         expect(nodeExplorers.length).not.toBe(0);
     });
 
+    test("Test if endpoint GET /v1/explorers/:mission returns a list with java explorers", async () => {
+        const techonology = "java";
+        const response = await request(app).get(`/v1/explorers/${techonology}`).send();
+        const nodeExplorers = response._body.explorers;
+        for(let i = 0; i < nodeExplorers.length; i++){
+            expect(nodeExplorers[i].mission).toBe("java");
+        }
+        expect(nodeExplorers.length).not.toBe(0);
+    });
+
     test("Checking if the response of GET /v1/explorers/amount/:mission has the correct attributes", async () => {
         const technology = "anythoingthintr";
         const response = await request(app).get(`/v1/explorers/amount/${technology}`).send();
