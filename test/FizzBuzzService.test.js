@@ -1,6 +1,6 @@
 const FizzBuzz = require("../lib/services/FizzBuzzService");
 
-describe("Tests's suite fot FizzBuzz Service", () => {
+describe("Tests's suite for FizzBuzz Service", () => {
     test("1) Verify if the param is not an object", () => {
     // const explorer = {name: "explorer1", score: 1};
         const paramIsAnObject = FizzBuzz.applyValidationInExplorer([]);
@@ -40,5 +40,11 @@ describe("Tests's suite fot FizzBuzz Service", () => {
         const explorer = { name: "explorer7", score: 7 };
         const objectWIthFizzTrickAttribute = FizzBuzz.applyValidationInExplorer(explorer);
         expect(objectWIthFizzTrickAttribute.trick).toBe(explorer.score);
+    });
+
+    //Tests for applyValidationInNumber()
+    test("1) Verifying if the param recieved is not a number", () => {
+        const fizzBuzzValidation = FizzBuzz.applyValidationInNumber("3");
+        expect(fizzBuzzValidation).toBe("El parámetro debe ser un número");
     });
 });
