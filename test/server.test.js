@@ -35,4 +35,11 @@ describe("Tests's suite of API Server", () => {
         const response = await request(app).get(`/v1/explorers/amount/${techonology}`).send();
         expect(response._body.quantity).toBe(10);
     });
+
+    test("Checking if the response of GET /v1/explorers/usernames/node has the usernames of 10 explorers", async () => {
+        const githubUsernamesOfNodeExplorers = ["ajolonauta1", "ajolonauta2", "ajolonauta3", "ajolonauta4", "ajolonauta5", "ajolonauta11", "ajolonauta12", "ajolonauta13", "ajolonauta14", "ajolonauta15"];
+        const techonology = "node";
+        const response = await request(app).get(`/v1/explorers/usernames/${techonology}`).send();
+        expect(response._body.explorers).toEqual(expect.arrayContaining(githubUsernamesOfNodeExplorers));
+    });
 });
