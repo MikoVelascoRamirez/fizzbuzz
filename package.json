@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/.bin/jest",
+    "start" : "node ./lib/server.js",
+    "test": "node ./node_modules/.bin/jest --forceExit --maxWorkers=1",
     "linter": "node ./node_modules/eslint/bin/eslint.js .",
     "linter-fix": "node ./node_modules/eslint/bin/eslint.js . --fix"
   },
