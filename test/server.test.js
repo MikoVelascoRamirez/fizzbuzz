@@ -8,7 +8,18 @@ describe("Tests's suite of API Server", () => {
     });
 
     test("Test if endpoint GET /v1/explorers/:mission returns a list with explorers", async () => {
-        const response = await request(app).get("/v1/explorers/node").send();
+        const techonology = "node";
+        const response = await request(app).get(`/v1/explorers/${techonology}`).send();
         expect(response._body.explorers.length).not.toBe(0);
+    });
+
+    test("Test if endpoint GET /v1/explorers/:mission returns a list with node explorers", async () => {
+        const techonology = "node";
+        const response = await request(app).get(`/v1/explorers/${techonology}`).send();
+        const nodeExplorers = response._body.explorers;
+        for(let i = 0; i < nodeExplorers.length; i++){
+            expect(nodeExplorers[i].mission).toBe("node");
+        }
+        expect(nodeExplorers.length).not.toBe(0);
     });
 });
