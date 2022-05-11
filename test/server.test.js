@@ -58,4 +58,11 @@ describe("Tests's suite of API Server", () => {
         const response = await request(app).get(`/v1/explorers/usernames/${techonology}`).send();
         expect(response._body.explorers).toEqual(expect.arrayContaining(githubUsernamesOfNodeExplorers));
     });
+
+    test("Checking if the response of GET /v1/explorers/usernames/node has the usernames of 5 explorers", async () => {
+        const githubUsernamesOfNodeExplorers = ["ajolonauta6", "ajolonauta7", "ajolonauta8", "ajolonauta9", "ajolonauta10"];
+        const techonology = "java";
+        const response = await request(app).get(`/v1/explorers/usernames/${techonology}`).send();
+        expect(response._body.explorers).toEqual(expect.arrayContaining(githubUsernamesOfNodeExplorers));
+    });
 });
