@@ -22,4 +22,11 @@ describe("Tests's suite of API Server", () => {
         }
         expect(nodeExplorers.length).not.toBe(0);
     });
+
+    test("Checking if the response of GET /v1/explorers/amount/:mission has the correct attributes", async () => {
+        const technology = "anythoingthintr";
+        const response = await request(app).get(`/v1/explorers/amount/${technology}`).send();
+        expect(response._body).toHaveProperty("mission");
+        expect(response._body).toHaveProperty("quantity");
+    });
 });
