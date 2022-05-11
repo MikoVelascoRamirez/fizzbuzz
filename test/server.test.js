@@ -29,4 +29,10 @@ describe("Tests's suite of API Server", () => {
         expect(response._body).toHaveProperty("mission");
         expect(response._body).toHaveProperty("quantity");
     });
+
+    test("Getting amount of explorers in Node GET /v1/explorers/amount/:mission", async() => {
+        const techonology = "node";
+        const response = await request(app).get(`/v1/explorers/amount/${techonology}`).send();
+        expect(response._body.quantity).toBe(10);
+    });
 });
