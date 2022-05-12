@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start" : "node ./lib/server.js",
-    "test": "node ./node_modules/.bin/jest --forceExit --maxWorkers=1 --watch",
+    "test": "node ./node_modules/.bin/jest --forceExit --maxWorkers=1 --detectOpenHandles",
     "linter": "node ./node_modules/eslint/bin/eslint.js .",
     "linter-fix": "node ./node_modules/eslint/bin/eslint.js . --fix"
   },
