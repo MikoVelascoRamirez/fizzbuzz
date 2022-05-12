@@ -69,7 +69,13 @@ describe("Tests's suite of API Server", () => {
     // NEW FEATURE!!!
     test("Checking if the response of GET /v1/fizzbuzz/:score returns a 200 status code", async () => {
         const number = 3;
-        const response = await request(app).get(`/v1/fizzbuzz/${number}`);
+        const response = await request(app).get(`/v1/fizzbuzz/${number}`).send();
         expect(response.status).toBe(200);
+    });
+
+    test("Testing if the response's object has the correct structure", async () => {
+        const response = await request(app).get("/v1/fizzbuzz/5").send();
+        expect(response._body).toHaveProperty("score");
+        expect(response._body).toHaveProperty("trick");
     });
 });
