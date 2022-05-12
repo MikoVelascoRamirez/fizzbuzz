@@ -88,4 +88,9 @@ describe("Tests's suite of API Server", () => {
         const response = await request(app).get("/v1/fizzbuzz/5").send();
         expect(response._body.trick).toBe("BUZZ");
     });
+
+    test("Testing if the response's object returns 'FIZZBUZZ'", async () => {
+        const response = await request(app).get("/v1/fizzbuzz/30").send();
+        expect(response._body.trick).toBe("FIZZBUZZ");
+    });
 });
