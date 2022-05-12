@@ -44,12 +44,17 @@ describe("Tests's suite for FizzBuzz Service", () => {
 
     //Tests for applyValidationInNumber()
     test("1) Verifying if the param recieved is not a number", () => {
-        const fizzBuzzValidation = FizzBuzz.applyValidationInNumber("3");
+        const fizzBuzzValidation = FizzBuzz.applyValidationInNumber("15");
         expect(fizzBuzzValidation).toBe("El parámetro debe ser un número");
     });
 
     test("2) Returning 'FIZZ' if the param is divisible by 3", () => {
-        const fizzBuzzValidation = FizzBuzz.applyValidationInNumber(15);
+        const fizzBuzzValidation = FizzBuzz.applyValidationInNumber(3);
         expect(fizzBuzzValidation).toBe("FIZZ");
+    });
+
+    test("3) Returning 'BUZZ' if the param is divisible by 5", () => {
+        const fizzBuzzValidation = FizzBuzz.applyValidationInNumber(5);
+        expect(fizzBuzzValidation).toBe("BUZZ");
     });
 });
