@@ -65,4 +65,11 @@ describe("Tests's suite of API Server", () => {
         const response = await request(app).get(`/v1/explorers/usernames/${techonology}`).send();
         expect(response._body.explorers).toEqual(expect.arrayContaining(githubUsernamesOfNodeExplorers));
     });
+
+    // NEW FEATURE!!!
+    test("Checking if the response of GET /v1/fizzbuzz/:score returns a 200 status code", async () => {
+        const number = 3;
+        const response = await request(app).get(`/v1/fizzbuzz/${number}`);
+        expect(response.status).toBe(200);
+    });
 });
