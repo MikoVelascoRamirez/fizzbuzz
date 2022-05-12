@@ -78,4 +78,9 @@ describe("Tests's suite of API Server", () => {
         expect(response._body).toHaveProperty("score");
         expect(response._body).toHaveProperty("trick");
     });
+
+    test("Testing if the response's object returns 'FIZZ'", async () => {
+        const response = await request(app).get("/v1/fizzbuzz/3").send();
+        expect(response._body.trick).toBe("FIZZ");
+    });
 });
