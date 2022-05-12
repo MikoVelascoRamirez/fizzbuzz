@@ -30,4 +30,9 @@ describe("Tests's suite of ExplorerController", () => {
         const result = ExplorerController.setFizzBuzzValidation(5);
         expect(result).toBe("BUZZ");
     });
+
+    test("6) Testing setFizzBuzzValidation method if the param is 15", () => {
+        const result = ExplorerController.setFizzBuzzValidation(15);
+        expect(result).toBe("FIZZBUZZ");
+    });
 });
