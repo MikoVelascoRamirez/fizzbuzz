@@ -62,4 +62,9 @@ describe("Tests's suite for FizzBuzz Service", () => {
         const fizzBuzzValidation = FizzBuzz.applyValidationInNumber(15);
         expect(fizzBuzzValidation).toBe("FIZZBUZZ");
     });
+
+    test("5) Returning a single number if the param is NOT divisible by 5 and by 3", () => {
+        const fizzBuzzValidation = FizzBuzz.applyValidationInNumber(7);
+        expect(fizzBuzzValidation).toBe(7);
+    });
 });
