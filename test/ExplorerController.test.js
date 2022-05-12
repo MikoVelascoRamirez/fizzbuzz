@@ -35,4 +35,9 @@ describe("Tests's suite of ExplorerController", () => {
         const result = ExplorerController.setFizzBuzzValidation(15);
         expect(result).toBe("FIZZBUZZ");
     });
+
+    test("7) Testing setFizzBuzzValidation method if the param is a number which is not divisible by 5 and by 3", () => {
+        const result = ExplorerController.setFizzBuzzValidation(7);
+        expect(result).toBe(7);
+    });
 });
