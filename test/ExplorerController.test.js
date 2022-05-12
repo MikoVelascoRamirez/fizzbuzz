@@ -18,4 +18,11 @@ describe("Tests's suite of ExplorerController", () => {
         const nodeExplorersUsernames = ExplorerController.getExplorersUsernamesByMission("node");
         expect(nodeExplorersUsernames).toEqual(expect.arrayContaining(githubUsernamesOfNodeExplorers));
     });
+
+    //New feature: setFizzBuzzValidation()
+
+    test("4) Testing setFizzBuzzValidation method if the param is 3", () => {
+        const result = ExplorerController.setFizzBuzzValidation(3);
+        expect(result).toBe("FIZZ");
+    });
 });
